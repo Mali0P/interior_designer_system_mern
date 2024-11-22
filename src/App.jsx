@@ -4,15 +4,23 @@ import Navbar from './InteriorSystem/Navbar/Navbar'
 import AboutUs from './InteriorSystem/DesignerList/Designerlist'
 import Design from './InteriorSystem/Designs/Design'
 import DesignerHomeList from './InteriorSystem/DesignerHomeList/DesignerHomeList'
+import Contactus from './InteriorSystem/ContactUs/Contactus'
+import Login from './InteriorSystem/login/Login'
+import ShowData from './InteriorSystem/ShowDesigns/ShowData'
+import IndividualDesign from './InteriorSystem/Individualdesign/IndividualDesign'
 export default function App() {
   return (
     <div>
       <Navbar/>
+
+      {/* <Navbar/>
 <Homepage/>
 <Design/>
 <DesignerHomeList/>
 <AboutUs/>
-
+<Contactus/>
+<ShowData/> */}
+<IndividualDesign/>
 
     </div>
   )

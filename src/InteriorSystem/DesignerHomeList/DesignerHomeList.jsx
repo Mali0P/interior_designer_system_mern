@@ -1,40 +1,32 @@
-import axios from 'axios'
+
 import React, { useEffect, useState } from 'react'
-
+import img1 from './DesignerImg/img1.jpg'
+import img2 from './DesignerImg/img2.jpg'
+import img3 from './DesignerImg/img3.jpg'
+import img4 from './DesignerImg/img4.jpg'
 export default function DesignerHomeList() {
-    const[designApi,designApiFun] = useState([])
-    let fetchApi = async ()=>{
-        try{
-let getApi = await axios.get('https://fake-json-api.mock.beeceptor.com/users')
-designApiFun(getApi.data)
-        }
-        catch(error){
-designApiFun(error)
-        }
-    }
+   
+    let imgArray = [img1,img2,img3,img4]
 
-    useEffect(()=>{
-        fetchApi()
-    },[])
   return (
-    <div className='w-[100vw] h-[37vw] bg-[#f5f5f5] m-auto bg-[black]'>
-<div className="desgnerList w-[90vw] border-t border-black m-auto py-[3vw]">
+    <div className='w-[100vw] h-[44vw] bg-[#f5f5f5] m-auto bg-[#f5f5f5] text-[black]'>
+<div className="desgnerList w-[90vw]  m-auto py-[3vw]">
 <div className="topHeading mb-[1vw] flex justify-between items-end pr-[1vw]">
             <div className="designContents">
             <p className='font-[300] text-[1vw]'>Interor Designer System</p>
-            <h2 className='text-[2.5vw] font-[400] '>Meet Designers</h2>
+            <h2 className='text-[2.5vw] font-[400] '>Meet Our Designers</h2>
             </div>
             <div className="showAllDesigns">
                 <button className='text-[0.6vw] font-[600] bg-[black] text-[white] border rounded-[100vw] px-[1.7vw] py-[0.9vw] border-black'>View More</button>
             </div>
           
         </div>
-        <div className="displayDesigns">
+        <div className="displayDesigns ">
             <ul className='flex gap-[1vw]'>
-            {designApi.slice(0,4).map((val,id)=>
-            <li className='relative bg-[white] w-[50%] py-[2vw] flex flex-col justfy-center items-center'>
-<img src={val.photo} alt="" style={{objectFit:'cover'}}/>
-<h3 className='text-[1vw] font-[600] mt-[0.6vw]'>{val.username.split(' ').slice(0, 2).join(' ')}</h3>
+            {imgArray.slice(0,4).map((val,id)=>
+            <li className='relative bg-[black] w-[50%]  flex flex-col justify-center items-center relative'>
+<img src={imgArray[id]} alt="" style={{objectFit:'cover',filter:'grayscale(100%)'}}  className='w-[100%] h-[100%] opacity-[0.5]' />
+<h3 className='text-[1.5vw] font-[600] mt-[0.6vw] absolute text-[white] '>Pranesh Mali</h3>
             </li>
             )}
             </ul>
