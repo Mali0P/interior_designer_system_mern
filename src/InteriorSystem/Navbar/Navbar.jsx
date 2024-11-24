@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Navbar() {
   return (
-    <div style={{zIndex:'9999',boxShadow:'rgba(0, 0, 0, 0.04) 0px 3px 5px'}} className='navbar w-[100vw] h-[4.6vw] text-[black] top-0  bg-[rgb(255,255,255)] fixed z-20 px-[5vw] flex justify-between items-center ' >
+    <div style={{zIndex:'9999',boxShadow:'rgba(0, 0, 0, 0.04) 0px 3px 5px'}} className='navbar w-[100vw] h-[4.6vw] text-[white] top-0  bg-[rgb(0,0,0,0.8)] fixed z-20 px-[5vw] flex justify-between items-center ' >
       <nav className='flex justify-center items-center flex justify-between items-center w-[100%]' >
         <h1 className='text-[1.4vw] font-[600]'>IDS</h1>
         <ul className='flex gap-[1vw] text-[1vw] font-[500] justify-center items-center'>
