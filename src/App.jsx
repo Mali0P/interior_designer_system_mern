@@ -10,21 +10,12 @@ import ShowData from './InteriorSystem/ShowDesigns/ShowData'
 import IndividualDesign from './InteriorSystem/Individualdesign/IndividualDesign'
 import Signup from './Designer/Designerlogin/signup'
 import DesignerDashbord from './Designer/DesignerDashboard/DesignerDashbord'
+import Adminsignup from './Admin/Adminsignup'
+import AdminHomepage from './Admin/AdminHomepage'
 export default function App() {
   return (
     <div>
-      {/* <Navbar/>
-
-      <Navbar/>
-<Homepage/>
-<Design/>
-<DesignerHomeList/>
-<AboutUs/>
-<Contactus/>
-<ShowData/>
-<IndividualDesign/>
-<Signup/> */}
-<DesignerDashbord/>
+<AdminHomepage/>
 
     </div>
   )

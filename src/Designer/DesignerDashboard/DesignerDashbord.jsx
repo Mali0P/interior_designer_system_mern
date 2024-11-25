@@ -50,7 +50,11 @@ src="https://images.squarespace-cdn.com/content/v1/574512d92eeb81676262d877/23c8
         <h2>Pranesh Mali</h2>
     </li>
     <li>
-        <label htmlFor="">Name</label>
+        <label htmlFor="">Email</label>
+        <h2>Pranesh Mali</h2>
+    </li>
+    <li>
+        <label htmlFor="">Address</label>
         <h2>Pranesh Mali</h2>
     </li>
     <li>
@@ -62,23 +66,39 @@ src="https://images.squarespace-cdn.com/content/v1/574512d92eeb81676262d877/23c8
         <h2>Pranesh Mali</h2>
     </li>
     <li>
-        <label htmlFor="">Name</label>
-        <h2>Pranesh Mali</h2>
-    </li>
-    <li>
-        <label htmlFor="">Name</label>
-        <h2>Pranesh Mali</h2>
+     <button className='bg-[black] px-[2vw] py-[0.5vw] text-[white]'>Edit Profile</button>
     </li>
   </ul>
 </form>
-
-             
-
               </div>
             
            
                
             </div>
+            
+
+            <div style={{boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px'}} className="addDesign w-[100%] h-[30%] bg-[white] mt-[2vw] rounded-[1vw] border px-[2vw] py-[3vw]">
+          <h3 className='text-[1vw] font-[600] text-[rgb(0,0,0)] mb-[0.4vw]'>My Designs</h3>
+          <h3 className='text-[1.2vw] text-[rgb(0,0,0,0.7)] mb-[1vw]'>Interior Desgner System / View Designs</h3>
+            <form className='w-[100%] h-[90%] pl-[1vw] grid grid-cols-5'>
+<div className="col-span-5 grid grid-cols-[5%_19%_19%_19%_19%_19%] font-[600] flex gap-[1vw] " style={{listStyle:'none'}}>
+<li>Sn no.</li>
+<li>Image</li>
+<li>Height</li>
+<li>Width</li>
+<li>Description</li>
+<li>Action</li>
+</div>
+
+
+  
+
+ </form>
+
+
+            </div>
+
+
             <div style={{boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px'}} className="addDesign w-[100%] h-[30%] bg-[white] mt-[2vw] rounded-[1vw] border px-[2vw] py-[3vw]">
           <h3 className='text-[1vw] font-[600] text-[rgb(0,0,0)] mb-[0.4vw]'>Add Design</h3>
           <h3 className='text-[1.2vw] text-[rgb(0,0,0,0.7)] mb-[1vw]'>Interior Desgner System / Add Design</h3>
@@ -114,6 +134,7 @@ src="https://images.squarespace-cdn.com/content/v1/574512d92eeb81676262d877/23c8
 
 
             </div>
+    
 
         </div>
 
