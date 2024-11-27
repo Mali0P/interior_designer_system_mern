@@ -1,0 +1,58 @@
+form{
+    width: 100%;
+    gap: 1vw;
+}
+form h2{
+    font-size: 2.5vw;
+    font-weight: 600;
+    
+
+}
+input{
+    padding: 0.7vw 1vw;
+    border: 0.1vh solid rgba(0, 0, 0, 0.17);
+    border-radius: 5px;
+}
+form button{
+    background:#20c55d;
+ padding: 0.5vw 1vw;
+ margin: auto;
+    width: 30%;
+font-size: 1vw;
+font-weight: 500;
+border-radius: 20px;
+color: white;
+}
+.signupContainer{
+border-radius: 20px;
+    color: rgb(0, 0, 0);
+background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+}
+select{
+    width: 35%;
+    font-size: 0.8vw;
+    padding: 0.7vw 1vw; 
+    cursor: pointer;
+      border: 0.1vh solid rgba(0, 0, 0, 0.17);
+      border-radius: 10px;
+    transition: 0.5s ease-in-out;
+    
+}
+.rightImgDiv{
+    width: 60%;
+    height: 100%;
+    background-color: #23b574;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+
+}
+.rightImgDiv h3{
+    font-size: 3vw;
+    font-weight: 600;
+    
+}

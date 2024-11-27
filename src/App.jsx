@@ -15,7 +15,13 @@ import AdminHomepage from './Admin/AdminHomepage'
 export default function App() {
   return (
     <div>
-<AdminHomepage/>
+<Navbar/>
+
+<Homepage/>
+<Design/>
+<DesignerHomeList/>
+<AboutUs/>
+<Contactus/>
 
     </div>
   )

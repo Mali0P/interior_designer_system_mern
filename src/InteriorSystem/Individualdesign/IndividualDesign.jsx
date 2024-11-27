@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import designImg from '../Designs/DesignIMages/img1.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import Navbar from '../Navbar/Navbar'
 export default function IndividualDesign() {
   const[showCustomize,showCustomizeFun] = useState(false)
   return (
     <div className='w-[100vw] h-[140vh] bg-[#f1f1f1] flex px-[10.1vw] justify-center items-center'>
+      <Navbar/>
 <div className="leftContentDesign bg-[skyblue] flex basis-[50%] h-[80%] ">
   <img src={designImg} alt="" width='100%' height='100%' className='object-cover' />
 </div>

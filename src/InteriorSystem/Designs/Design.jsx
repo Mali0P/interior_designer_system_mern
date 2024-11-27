@@ -4,6 +4,7 @@ import img1 from './DesignIMages/img1.jpg'
 import img2 from './DesignIMages/img2.jpg'
 import img3 from './DesignIMages/img3.jpg'
 import img4 from './DesignIMages/img4.jpg'
+import { Link } from 'react-router-dom'
 export default function Design() {
     const[designApi,designApiFun] = useState([])
     let fetchApi = async ()=>{
@@ -35,8 +36,11 @@ let imgArray = [img1,img2,img3,img4]
             <ul className='flex gap-[1vw]'>
             {imgArray.slice(0,4).map((val,id)=>
             <li className='relative w-[50%]  flex flex-col justify-top items-center relative'>
-<img src={imgArray[id]} alt="" style={{objectFit:'cover',filter:''}}  className='w-[100%] h-[68%] opacity-[1]' />
-            </li>
+             
+<img src={imgArray[id]} alt="" style={{objectFit:'cover'}}  className='w-[100%] h-[68%] opacity-[1]' />
+<Link to={`/design/${id}`}>
+<h2>View Design</h2>
+</Link>  </li>
             )}
             </ul>
 

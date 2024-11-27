@@ -1,6 +1,7 @@
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
@@ -14,7 +15,9 @@ export default function Navbar() {
           <li>Contact</li>
         </ul>
 
-        <button style={{backdropFilter:'blur(2vw)'}} className='z-10  text-[0.7vw] rounded-[0.4vw] px-[1.3vw] py-[0.7vw] bg-[#575ef4] text-[white]  font-[600] '>login/signup<FontAwesomeIcon icon={faRightFromBracket} className='ml-[0.5vw]'/></button>
+        <button style={{backdropFilter:'blur(2vw)'}} className='z-10  text-[0.7vw] rounded-[0.4vw] px-[1.3vw] py-[0.7vw] bg-[#575ef4] text-[white]  font-[600] '>
+          <Link to={'/login'}>
+          login/signup<FontAwesomeIcon icon={faRightFromBracket} className='ml-[0.5vw]'/></Link></button>
        
 
       </nav>
