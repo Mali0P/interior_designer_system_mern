@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Design from './InteriorSystem/Designs/Design.jsx';
-import Login from './InteriorSystem/login/Login.jsx';
+
 import IndividualDesign from './InteriorSystem/Individualdesign/IndividualDesign.jsx';
-import Signup from './Signup/Signup.jsx';
+import Signup from '../src/InteriorSystem/login/Signup.jsx';
+import Login from './InteriorSystem/login/Login.jsx';
 
 // Define your routes using createBrowserRouter
 let allRoutes = createBrowserRouter([
@@ -17,15 +17,16 @@ let allRoutes = createBrowserRouter([
   {
     path: 'design/:id',
     element: <IndividualDesign />,
-  },
-  {
-    path: 'login',
-    element: <Login />,
   }
   ,
   {
     path: 'signup',
     element: <Signup/>,
+  }
+  ,
+  {
+    path: 'login',
+    element: <Login/>,
   }
   ,
 ]);

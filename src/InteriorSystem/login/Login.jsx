@@ -1,98 +1,66 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // Ensure you install axios: npm install axios
-import singupbg from './loginImage/signupbg.jpg'
-import './signupcss.css'
-function Signup() {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    address: '',
-    role: '', // Default role
-    password: '',
-  });
-  
-  const [message, setMessage] = useState('');
+import axios from 'axios';
+import './Logincss.css'
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setError('');
+    setSuccess('');
+
     try {
       const response = await axios.post('http://localhost/Backend/user.php', {
-        action: 'signup',
-        ...formData
+        email,
+        password,
       });
-      setMessage(response.data.success ? 'Signup successful!' : response.data.error);
-    } catch (error) {
-      setMessage('Error signing up. Please try again.');
+
+      if (response.data.success) {
+        setSuccess('Login successful!');
+        // Redirect or save user data
+      } else {
+        setError(response.data.error || 'Invalid credentials');
+      }
+    } catch (err) {
+      setError('An error occurred. Please try again later.');
     }
   };
 
   return (
-    <div className='w-[100vw] h-[100vh] flex justify-center items-center'>
-      <img src={singupbg} alt=""  className='absolute w-[100%] h-[100%] object-cover'/>
-     
-      <div className="signupContainer absolute w-[76%] h-[90%]  justify-center items-center flex">
+    
+    <div className='loginPage w-[100vw] h-[100vh] relative flex justify-center items-center'>
+        <img src="" alt="" />
 
-      <div className="rightImgDiv">
-<h3>Interior Designer System</h3>
-<p>"Transforming Spaces, One Design at a Time."</p>
-</div>
-<div className="formDiv w-[40%]">
-      <form onSubmit={handleSubmit} className='flex flex-col px-[5vw]'>
-      <h2>Create an account</h2>
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          value={formData.username}
-          onChange={handleChange}
-          required 
-          className='text-[black]'
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-           className='text-[black]'
-          required
-        />
-        <input
-          type="text"
-          name="address"
-          placeholder="Address"
-          value={formData.address}
-          onChange={handleChange}
-           className='text-[black]'
-          required
-        />
-        <select name="role" value={formData.role} onChange={handleChange} className='text-[black]'>
-          <option value="user">User</option>
-          <option value="designer">Designer</option>
-        </select>
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-           className='text-[black]'
-          required
-        />
-        <button type="submit">Signup</button>
+      <h2>Login</h2>
+
+      <form onSubmit={handleLogin}>
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit">Login</button>
       </form>
-      {message && <p>{message}</p>}
-      </div>
-  
-      </div>
-     
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {success && <p style={{ color: 'green' }}>{success}</p>}
     </div>
   );
-}
+};
 
-export default Signup;
+export default Login;
