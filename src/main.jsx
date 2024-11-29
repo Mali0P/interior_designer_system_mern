@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import IndividualDesign from './InteriorSystem/Individualdesign/IndividualDesign.jsx';
 import Signup from '../src/InteriorSystem/login/Signup.jsx';
 import Login from './InteriorSystem/login/Login.jsx';
+import DesignerDashbord from './Designer/DesignerDashboard/DesignerDashbord.jsx';
 
 // Define your routes using createBrowserRouter
 let allRoutes = createBrowserRouter([
@@ -29,6 +30,10 @@ let allRoutes = createBrowserRouter([
     element: <Login/>,
   }
   ,
+  {
+    path:'designer/dashboard',
+    element:<DesignerDashbord/>
+  }
 ]);
 
 // Render the application with RouterProvider

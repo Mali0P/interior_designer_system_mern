@@ -24,7 +24,7 @@ export default function DesignerHomeList() {
         <div className="displayDesigns ">
             <ul className='flex gap-[1vw]'>
             {imgArray.slice(0,4).map((val,id)=>
-            <li className='relative bg-[black] w-[50%]  flex flex-col justify-center items-center relative'>
+            <li key={id} className='relative bg-[black] w-[50%]  flex flex-col justify-center items-center relative'>
 <img src={imgArray[id]} alt="" style={{objectFit:'cover',filter:'grayscale(100%)'}}  className='w-[100%] h-[100%] opacity-[0.5]' />
 <h3 className='text-[1.5vw] font-[600] mt-[0.6vw] absolute text-[white] '>Pranesh Mali</h3>
             </li>

@@ -9,9 +9,6 @@
         scroll-behavior: smooth;
         letter-spacing: 0.1vw;
     }
-    html{
-      scroll-behavior: smooth;
-    }
 
 ::-webkit-scrollbar{
    display: none;

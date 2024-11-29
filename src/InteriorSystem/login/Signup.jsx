@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios'; // Ensure you install axios: npm install axios
 import singupbg from './loginImage/signupbg.jpg'
 import './signupcss.css'
+import { Link } from 'react-router-dom';
 
 function Signup() {
   const [formData, setFormData] = useState({
@@ -33,8 +34,8 @@ function Signup() {
   };
 
   return (
-    <div className='w-[100vw] h-[100vh] flex justify-center items-center'>
-      <img src={singupbg} alt=""  className='absolute w-[100%] h-[100%] object-cover'/>
+    <div className='w-[100vw] h-[100vh] flex justify-center items-center bg-[black]'>
+      <img src={singupbg} alt=""  className='absolute w-[100%] h-[100%] object-cover opacity-[0.7]'/>
  
       <div className="signupContainer absolute w-[76%] h-[90%]  justify-center items-center flex">
 
@@ -92,7 +93,11 @@ function Signup() {
         <button type="submit">Signup</button>
       </form>
       {message && <p>{message}</p>}
-      <p className='text-center text-[0.8vw] mt-[1vw] text-[black] font-[500] cursor-pointer font-[600]'>Already have an acount?</p>
+      <p className='text-center text-[0.8vw] mt-[1vw] text-[black] cursor-pointer font-[500]'>
+        <Link to={'/login'}>
+        Already have an acount?
+        </Link>
+      </p>
       </div>
   
       </div>

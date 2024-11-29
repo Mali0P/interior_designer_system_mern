@@ -4,20 +4,7 @@ import'./Homepagecss.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 export default function Homepage() {
-  let rotateText = () => {
-    let text = document.querySelector('.scrollDownText p');
-    text.innerHTML = text.innerText
-      .split("")
-      .map(
-        (char, id) =>
-          `<span style="transform: rotate(${id * 8.5}deg); display: inline-block;">${char}</span>`
-      )
-      .join(""); // Join to create a single string of HTML
-  };
-  
-  useEffect(() => {
-    rotateText();
-  }, []);
+
   
   
 
