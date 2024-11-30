@@ -17,38 +17,51 @@ const Login = () => {
     setError('');
     setSuccess('');
 
+    // Basic client-side validation
+    if (!email || !password) {
+      setError('Please enter both email and password.');
+      return;
+    }
+
     try {
       const response = await axios.post('http://localhost/Backend/user.php', {
         email,
         password,
       });
 
-      console.log("Full Response:", response.data); // Log the data part of the response
+      console.log("Full Response:", response.data);  // Log the entire response to check its structure
 
       if (response.data.success) {
-        // Extract user data from the response
-        const { user_id, user_email, user_role } = response.data;
+        // Destructure the user data from the response
+        const { user_id, user_email, user_role, username, address } = response.data;
 
-        // Store user data in localStorage
+        // Log the role to check its value
+        console.log('User Role:', user_role);
+
+        // Store user data in localStorage, including address
         localStorage.setItem('user', JSON.stringify({
           id: user_id,
           email: user_email,
           role: user_role,
+          username: username,
+          address: address,  // Store the address
         }));
 
         setSuccess('Login successful!');
 
         // Navigate based on user role
         if (user_role && user_role.toLowerCase() === 'designer') {
+          console.log('Navigating to /designer/dashboard');
           navigate('/designer/dashboard'); // Redirect to designer dashboard
         } else {
+          console.log('Navigating to /');
           navigate('/'); // Redirect to default home page
         }
       } else {
         setError(response.data.error || 'Invalid credentials');
       }
     } catch (err) {
-      console.error("Error:", err); // Log detailed error info
+      console.error("Error:", err);  // Log detailed error info
       setError('An error occurred. Please try again later.');
     }
   };
@@ -67,7 +80,8 @@ const Login = () => {
         </div>
 
         <form onSubmit={handleLogin} className='flex flex-col px-[5vw] w-[40%]'>
-          <h2 className='text-[3vw] font-[500]'>Login</h2>
+          <h2 className='text-[3vw] font-[600]'>Welcome Back!</h2>
+          <h2 className='text-[1.2vw] font-[600]'>Login to your account</h2>
           <label>Email:</label>
           <input
             className='w-[100%]'

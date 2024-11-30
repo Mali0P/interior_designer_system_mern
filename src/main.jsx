@@ -8,6 +8,8 @@ import IndividualDesign from './InteriorSystem/Individualdesign/IndividualDesign
 import Signup from '../src/InteriorSystem/login/Signup.jsx';
 import Login from './InteriorSystem/login/Login.jsx';
 import DesignerDashbord from './Designer/DesignerDashboard/DesignerDashbord.jsx';
+import UploadDesign from './Designer/uploadDesign.jsx';
+import ShowDesign from './Designer/DesignerDashboard/showDesign/ShowDesign.jsx';
 
 // Define your routes using createBrowserRouter
 let allRoutes = createBrowserRouter([
@@ -33,6 +35,10 @@ let allRoutes = createBrowserRouter([
   {
     path:'designer/dashboard',
     element:<DesignerDashbord/>
+  },
+  {
+    path:'upload',
+    element:<ShowDesign/>
   }
 ]);
 
