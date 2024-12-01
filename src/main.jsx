@@ -3,14 +3,13 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
+import AdminLogin from './Admin/login/AdminLogin.jsx';
 import IndividualDesign from './InteriorSystem/Individualdesign/IndividualDesign.jsx';
 import Signup from '../src/InteriorSystem/login/Signup.jsx';
 import Login from './InteriorSystem/login/Login.jsx';
 import DesignerDashbord from './Designer/DesignerDashboard/DesignerDashbord.jsx';
-import UploadDesign from './Designer/uploadDesign.jsx';
 import ShowDesign from './Designer/DesignerDashboard/showDesign/ShowDesign.jsx';
-
+import AdminHomepage from './Admin/AdminHomepage.jsx'
 // Define your routes using createBrowserRouter
 let allRoutes = createBrowserRouter([
   {
@@ -39,6 +38,15 @@ let allRoutes = createBrowserRouter([
   {
     path:'upload',
     element:<ShowDesign/>
+  },
+  {
+    path:'admin',
+    element: <AdminHomepage/>
+
+  },
+  {
+    path:'admin/login',
+    element:<AdminLogin/>
   }
 ]);
 

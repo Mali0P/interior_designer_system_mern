@@ -49,31 +49,31 @@ const ShowDesign = () => {
     <div className='w-[100%]'>
       <table className='w-[100%] gap-[3vw]' >
         <thead className='border-b border-[rgb(0,0,0,0.2)] py-[2vw] h-[3vw]'>
-          <tr className='text-left'>
-            <th>S.No</th>
+          <tr className='text-center'>
+            <th className='text-[0.8vw]'>S.No</th>
             <th>Image</th>
             <th>Name</th>
             <th>Height</th>
             <th>Width</th>
-            <th>Description</th>
+            <th className='px-[2vw]'>Description</th>
             <th className='w-[10%] text-center'> Action</th>
           </tr>
         </thead>
         <tbody>
           {designs.map((design, index) => (
-            <tr key={design.Id} style={{backgroundColor:index%2==0?'#f7f8fc':'white'}}>
-              <td>{index + 1}</td>
-              <td>
-                <img
+            <tr key={design.Id} className='h-[10vw]' style={{backgroundColor:index%2==0?'#f7f8fc':'white'}}>
+              <td className='text-center'>{index + 1}</td>
+              <td className='px-[0.5vw] w-[20%]' >
+                <img className='m-auto'
                   src={`http://localhost/Backend/DesignImage/${design.image}`}
                   alt={design.Name}
                   style={{ width: '100px', height: '100px',objectFit:'cover' }}
                 />
               </td>
-              <td>{design.Name}</td>
-              <td>{design.Height}</td>
-              <td>{design.Width}</td>
-              <td>{design.Description}</td>
+              <td className='w-[10%] text-[0.8vw] font-[600]'>{design.Name}</td>
+              <td className='w-[10%] text-center'>{design.Height}</td>
+              <td className='w-[10%] text-center'>{design.Width}</td>
+              <td className='w-[50%] px-[2vw] text-[0.7vw]'>{design.Description}</td>
               <td>
                 <button className='bg-[red] text-white py-[0.5vw] px-[2vw] text-[0.9vw] rounded-[4vw]' onClick={() => handleDelete(design.Id)}>Delete</button>
               </td>

@@ -51,6 +51,7 @@ const UploadDesign = () => {
       console.log('Response Data:', response.data); // Log the response
       if (response.data.status === 'success') {
         alert(response.data.message);
+  
       } else {
         alert('Error: ' + response.data.message);
       }
@@ -64,14 +65,14 @@ const UploadDesign = () => {
 
 
 
-    <form onSubmit={handleSubmit} encType="multipart/form-data" className='w-[50%]'>
+    <form onSubmit={handleSubmit} encType="multipart/form-data" className='w-[100%] flex flex-col h-[100%] gap-[0.2vw]'>
       <input type="text" name="Name" placeholder="Name" onChange={handleChange} required />
       <input type="number" name="Height" placeholder="Height" onChange={handleChange} required />
       <input type="number" name="Width" placeholder="Width" onChange={handleChange} required />
       <textarea name="Description" placeholder="Description" onChange={handleChange} required />
       <input type="number" name="Price" placeholder="Price" onChange={handleChange} required />
-      <input type="file" name="image" accept="image/*" onChange={handleFileChange} required />
-      <button type="submit" >Upload Design</button>
+      <input type="file" name="image" accept="image/*" onChange={handleFileChange} required  className='bg-[#f1f1f1] text-[black] '/>
+      <button type="submit" className='mt-[0.3vw]' >Upload Design</button>
     </form>
 
 

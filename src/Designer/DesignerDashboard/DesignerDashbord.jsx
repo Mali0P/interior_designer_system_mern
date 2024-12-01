@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { faAddressBook, faCaretDown, faPowerOff, faUser, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faAddressBook, faCaretDown, faPowerOff, faUser, faPlus, faHandPointUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom'; // Import for navigation
 import UploadDesign from '../uploadDesign/';
@@ -47,6 +47,10 @@ const storedUser = JSON.parse(localStorage.getItem('user'));
                 <FontAwesomeIcon icon={faUser} /> My Profile
               </li>
               <li className='text-[rgb(255,255,255,0.8)]'>
+                <a href="#mydesigns"> <FontAwesomeIcon icon={faHandPointUp} /> My Designs</a>
+               
+              </li>
+              <li className='text-[rgb(255,255,255,0.8)]'>
                 <FontAwesomeIcon icon={faPlus} /> Add Designs
               </li>
               <li className='text-[rgb(255,255,255,0.8)]'>
@@ -65,15 +69,15 @@ const storedUser = JSON.parse(localStorage.getItem('user'));
         </div>
       </div>
 
-      {/* Right Dashboard */}
+
       <div className="rightDashboard w-[78vw] h-[300%] bg-[#f2f2f2] relative px-[3vw] py-[2vw] flex ml-[22vw] flex-col">
-        {/* Profile Section */}
-        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} className="myProfile w-[100%] h-[32%] relative bg-[white] pr-[4vw] px-[4vw] py-[1vw] rounded-[1vw] border flex justify-between">
+    
+        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} className="myProfile w-[100%] h-[32%] relative bg-[white] pr-[4vw] px-[4vw] py-[1vw] rounded-[1vw] border flex justify-around">
           <div className="topContent w-[40%] h-[100%] relative">
             <h2 className='text-[3vw] font-[500]'>Hello, {storedUser.username}!</h2>
             <h2 className='text-[1vw] font-[400]'>Designer / Dashboard</h2>
             <img
-              className="w-full h-[80%] mt-[1vw] object-cover"
+              className="w-[60%] h-[50%] mt-[1vw] object-cover"
               style={{ objectPosition: 'center' }}
               src="https://images.squarespace-cdn.com/content/v1/574512d92eeb81676262d877/23c81b18-6a05-4691-9c9c-884f3842bc9e/Lexie-2MB.jpg?format=1500w"
               alt="Profile"
@@ -112,17 +116,33 @@ const storedUser = JSON.parse(localStorage.getItem('user'));
         </div>
 
         {/* My Designs Section */}
-        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px', minHeight:'40vw' }} className="addDesign w-[100%] bg-[white] mt-[2vw] rounded-[1vw] border px-[2vw] py-[3vw]" >
+        <div id='mydesigns' style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px', minHeight:'40vw' }} className="addDesign w-[100%] bg-[white] mt-[2vw] rounded-[1vw] border px-[2vw] py-[3vw]" >
             <h3 className='text-[1vw] font-[600] text-[rgb(0,0,0)] mb-[0.4vw] text-[black]'>My Designs</h3>
             <h3 className='text-[1.2vw] text-[rgb(0,0,0,0.7)] mb-[1vw] text-[0.6vw]'>Interior Designer System / View Designs</h3>
-      <ShowDesign/>
+  
+    <ShowDesign/>
+   
+  
+  
         </div>
 
         
-        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} className="addDesign w-[100%] h-[35vw] bg-[white] mt-[2vw] rounded-[1vw] border px-[2vw] py-[3vw]">
-          <h3 className='text-[1vw] font-[600] text-[rgb(0,0,0)] mb-[0.4vw]'>Add Design</h3>
+        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} className="flex justify-between addDesign w-[100%] h-[35vw] bg-[white] mt-[2vw] rounded-[1vw] border px-[2vw] py-[3vw]">
+        <div className="imgDiv w-[50%] h-[100%] bg-[black] flex flex-col justify-center items-center relative">
+
+<img src="https://files.planoplan.com/upload/content/750/4b2d2885.webp" className='w-[100%] opacity-[0.5] object-cover h-[100%] absolute' alt="" />
+<h2 className='text-[white] text-[2vw] font-[600] absolute'>Add Your Designs</h2>
+</div>
+        <div className="addDesignForm w-[45%]">
+        <h3 className='text-[1vw] font-[600] text-[rgb(0,0,0)] mb-[0.4vw]'>Add Design</h3>
           <h3 className='text-[1.2vw] text-[rgb(0,0,0,0.7)] mb-[1vw]'>Interior Designer System / Add Design</h3>
+     
     <UploadDesign/>
+ 
+        </div>
+        
+ 
+  
         </div>
       </div>
     </div>

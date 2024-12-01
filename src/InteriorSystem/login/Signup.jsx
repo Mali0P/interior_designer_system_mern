@@ -96,8 +96,9 @@ function Signup() {
             />
             <button type="submit">Signup</button>
           </form>
-          {message && <p>{message}</p>}
+     
           <p className='text-center text-[0.8vw] mt-[1vw] text-[black] cursor-pointer font-[500]'>
+          {message && <p>{message}</p>}
             <Link to={'/login'}>
               Already have an account?
             </Link>

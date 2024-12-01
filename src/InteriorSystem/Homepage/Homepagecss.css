@@ -9,7 +9,9 @@
         scroll-behavior: smooth;
         letter-spacing: 0.1vw;
     }
-
+html{
+   scroll-behavior: smooth;
+}
 ::-webkit-scrollbar{
    display: none;
 }
@@ -62,29 +64,4 @@
    z-index: 4;
  }
  
- .scrollDownText{
-   position: absolute;
-   bottom: 0;
-   right: 10vw;
-  
-   display: flex;
-   justify-content: center;
-   
 
- }
-.scrollDownText span{
-   position: absolute;
- color: white;
-   font-size: 1vw;
-   z-index: 99;
-   transform-origin: 0 5vw;
-  
-
-}
-@keyframes rotateText {
-
-   to{
-transform: rotate(360deg);
-   }
-   
-}

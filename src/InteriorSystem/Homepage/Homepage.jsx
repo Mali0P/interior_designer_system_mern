@@ -15,9 +15,7 @@ export default function Homepage() {
   <h1 className='text-[2vw] font-[100]'>Transforming Spaces, Elevating Lives</h1>
   <button className='border px-[3vw] py-[1.2vw] text-[0.7vw] rounded-[100vw]'>Explore More</button>
   </div>
-  <div className="scrollDownText w-[20vw] h-[16vw]">
-<p>scroll down scroll down </p>
-  </div>
+
 
 
     </div>
