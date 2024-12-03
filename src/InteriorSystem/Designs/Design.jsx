@@ -46,13 +46,13 @@ export default function Design() {
         </div>
         <div className="showAllDesigns">
           <button className='text-[0.6vw] font-[600] bg-black text-white border rounded-[100vw] px-[1.3vw] py-[0.6vw] border-black'>
-            View More
+            <Link to={'/viewdesigns'}>View All Designs</Link> 
           </button>
         </div>
       </div>
       <div className="displayDesigns">
         <ul className='flex gap-[1vw]'>
-          {designs.map((design) => (
+          {designs.slice(0,4).map((design) => (
             <li className='relative w-[50%] flex flex-col justify-top items-center' key={design.Id}>
               <Link to={`/design/${design.Id}`}>
         <img

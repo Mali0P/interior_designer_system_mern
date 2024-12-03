@@ -10,6 +10,9 @@ import Login from './InteriorSystem/login/Login.jsx';
 import DesignerDashbord from './Designer/DesignerDashboard/DesignerDashbord.jsx';
 import ShowDesign from './Designer/DesignerDashboard/showDesign/ShowDesign.jsx';
 import AdminHomepage from './Admin/AdminHomepage.jsx'
+import ShowData from './InteriorSystem/ShowDesigns/ShowData.jsx';
+import Customization from './InteriorSystem/Individualdesign/Customization.jsx';
+import ShowHistory from './InteriorSystem/ShowHistory/ShowHistory.jsx';
 // Define your routes using createBrowserRouter
 let allRoutes = createBrowserRouter([
   {
@@ -43,10 +46,26 @@ let allRoutes = createBrowserRouter([
     path:'admin',
     element: <AdminHomepage/>
 
-  },
+  }
+  ,
   {
     path:'admin/login',
     element:<AdminLogin/>
+  }
+  ,
+  {
+    path:'viewdesigns',
+    element:<ShowData/>
+  }
+  ,
+  {
+    path:'customization',
+    element:<Customization/>
+  }
+  ,
+  {
+    path:'history',
+    element:<ShowHistory/>
   }
 ]);
 

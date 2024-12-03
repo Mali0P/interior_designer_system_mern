@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom'; // Import for navigation
 import UploadDesign from '../uploadDesign/';
 import ShowDesign from './showDesign/ShowDesign';
+import CustomizationRequest from './CustomizationRequest/CustomizationRequest';
 
 
 export default function DesignerDashboard() {
@@ -127,7 +128,7 @@ const storedUser = JSON.parse(localStorage.getItem('user'));
         </div>
 
         
-        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} className="flex justify-between addDesign w-[100%] h-[35vw] bg-[white] mt-[2vw] rounded-[1vw] border px-[2vw] py-[3vw]">
+        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} className="flex justify-between addDesign w-[100%] h-[45vw] bg-[white] mt-[2vw] rounded-[1vw] border px-[2vw] py-[3vw]">
         <div className="imgDiv w-[50%] h-[100%] bg-[black] flex flex-col justify-center items-center relative">
 
 <img src="https://files.planoplan.com/upload/content/750/4b2d2885.webp" className='w-[100%] opacity-[0.5] object-cover h-[100%] absolute' alt="" />
@@ -142,6 +143,15 @@ const storedUser = JSON.parse(localStorage.getItem('user'));
         </div>
         
  
+  
+        </div>
+        <div id='mydesigns' style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px', minHeight:'40vw' }} className="addDesign w-[100%] bg-[white] mt-[2vw] rounded-[1vw] border px-[2vw] py-[3vw]" >
+            <h3 className='text-[1vw] font-[600] text-[rgb(0,0,0)] mb-[0.4vw] text-[black]'>My Designs</h3>
+            <h3 className='text-[1.2vw] text-[rgb(0,0,0,0.7)] mb-[1vw] text-[0.6vw]'>Interior Designer System / View Designs</h3>
+  
+    <CustomizationRequest/>
+   
+  
   
         </div>
       </div>

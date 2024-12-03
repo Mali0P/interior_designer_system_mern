@@ -11,7 +11,7 @@ const ShowDesign = () => {
   useEffect(() => {
     const fetchDesigns = async () => {
       try {
-        const response = await axios.post('http://localhost/Backend/getDesigns.php', { designerId });
+        const response = await axios.post('http://localhost/Backend/designerShowDesigns.php', { designerId });
         if (response.data.status === 'success') {
           setDesigns(response.data.designs); // Assuming 'designs' is an array in the response
         } else {
@@ -47,7 +47,7 @@ const ShowDesign = () => {
 
   return (
     <div className='w-[100%]'>
-      <table className='w-[100%] gap-[3vw]' >
+      <table className='w-[100%] gap-[3vw]'>
         <thead className='border-b border-[rgb(0,0,0,0.2)] py-[2vw] h-[3vw]'>
           <tr className='text-center'>
             <th className='text-[0.8vw]'>S.No</th>
@@ -56,18 +56,19 @@ const ShowDesign = () => {
             <th>Height</th>
             <th>Width</th>
             <th className='px-[2vw]'>Description</th>
-            <th className='w-[10%] text-center'> Action</th>
+            <th className='w-[10%] text-center'>Action</th>
           </tr>
         </thead>
         <tbody>
           {designs.map((design, index) => (
-            <tr key={design.Id} className='h-[10vw]' style={{backgroundColor:index%2==0?'#f7f8fc':'white'}}>
+            <tr key={design.Id} className='h-[10vw]' style={{ backgroundColor: index % 2 === 0 ? '#f7f8fc' : 'white' }}>
               <td className='text-center'>{index + 1}</td>
-              <td className='px-[0.5vw] w-[20%]' >
-                <img className='m-auto'
+              <td className='px-[0.5vw] w-[20%]'>
+                <img 
+                  className='m-auto'
                   src={`http://localhost/Backend/DesignImage/${design.image}`}
                   alt={design.Name}
-                  style={{ width: '100px', height: '100px',objectFit:'cover' }}
+                  style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                 />
               </td>
               <td className='w-[10%] text-[0.8vw] font-[600]'>{design.Name}</td>
@@ -75,7 +76,12 @@ const ShowDesign = () => {
               <td className='w-[10%] text-center'>{design.Width}</td>
               <td className='w-[50%] px-[2vw] text-[0.7vw]'>{design.Description}</td>
               <td>
-                <button className='bg-[red] text-white py-[0.5vw] px-[2vw] text-[0.9vw] rounded-[4vw]' onClick={() => handleDelete(design.Id)}>Delete</button>
+                <button 
+                  className='bg-[red] text-white py-[0.5vw] px-[2vw] text-[0.9vw] rounded-[4vw]' 
+                  onClick={() => handleDelete(design.Id)}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}

@@ -17,12 +17,14 @@ export default function AdminHomepage() {
         }
       })
       .catch(error => console.error('Error fetching counts:', error));
-
-    fetch('http://localhost/Backend/getCategories.php')
+      fetch('http://localhost/Backend/getCategories.php')
       .then(response => response.json())
       .then(data => {
+        console.log("Fetched categories data:", data);  // Debug log
         if (data.status === 'success') {
           setCategories(data.categories);
+        } else {
+          console.error('Categories fetch failed:', data.message);
         }
       })
       .catch(error => console.error('Error fetching categories:', error));
@@ -35,6 +37,8 @@ export default function AdminHomepage() {
         }
       })
       .catch(error => console.error('Error fetching designs:', error));
+
+      
   }, []);
 
   // Handle category addition
@@ -104,7 +108,23 @@ export default function AdminHomepage() {
         });
     };
   
-
+    const handleDeleteCategory = (categoryId) => {
+      fetch('http://localhost/Backend/deleteCategory.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ categoryId })  // Send categoryId to the backend
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === 'success') {
+            alert(data.message);
+            setCategories(categories.filter(category => category.CategoryId !== categoryId)); // Update the state
+          } else {
+            alert(data.message);
+          }
+        })
+        .catch(error => console.error('Error deleting category:', error));
+    };
   return (
     <div className='w-[100vw] min-h-[100vh] flex'>
       <div className="leftDashboard bg-[white] w-[22vw] h-[100%] fixed top-0 left-0">
@@ -115,6 +135,7 @@ export default function AdminHomepage() {
             <li><a href="#dashboard">Dashboard</a></li>
             <li><a href="#showCategories">Add Category</a></li>
             <li><a href="#designs">Designs</a></li>
+            <li><a href="#users">Users/Designers</a></li>
             <li onClick={logout} className='cursor-pointer'>Logout</li>
           </ul>
         </div>
@@ -154,6 +175,25 @@ export default function AdminHomepage() {
             </button>
           </div>
         </div>
+        <div className="categoryList bg-white mt-4 rounded p-4">
+  <h3 className='text-[1.5vw] font-bold mb-4'>Categories List</h3>
+  <ul>
+    {categories.length > 0 ? (
+      categories.map(category => (
+        <li key={category.CategoryId} className='border-b py-2 flex justify-between items-center'>
+          {category.Category}
+          <button 
+            onClick={() => handleDeleteCategory(category.CategoryId)} 
+            className='bg-red-500 text-white px-4 py-1 rounded'>
+            Delete
+          </button>
+        </li>
+      ))
+    ) : (
+      <p>No categories available.</p>
+    )}
+  </ul>
+</div>
 
        
         <div id='designs' className="designs bg-white mt-4 rounded p-4">
@@ -161,7 +201,7 @@ export default function AdminHomepage() {
           <ul>
             <li className='bg-[black] border-b py-4 text-[white] text-[1vw] px-[1vw] mb-[1vw] grid grid-cols-11'>
            
-                <p>Designer ID</p>
+                <p>D / ID</p>
                 <p>Name</p>
                 <p>Height</p>
                 <p>Width</p>
@@ -200,7 +240,8 @@ export default function AdminHomepage() {
             ))}
           </ul>
         </div>
-        <div className="userlist">
+        <div id='users' className="designs bg-white mt-4 rounded p-4">
+         
           <UserList/>
         </div>
       </div>

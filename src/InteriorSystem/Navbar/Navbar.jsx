@@ -24,10 +24,13 @@ export default function Navbar() {
       className='navbar w-[100vw] h-[4.6vw] text-[white] top-0 bg-[rgb(0,0,0,0.8)] fixed z-20 px-[5vw] flex justify-between items-center'
     >
       <nav className='flex justify-between items-center w-[100%]'>
-        <h1 className='text-[1.4vw] font-[600]'>IDS</h1>
+        <h1 className='text-[1.4vw] font-[600]'>
+          <Link to={'/'}>          IDS</Link>
+</h1>
         <ul className='flex gap-[1vw] text-[1vw] font-[500]'>
-          <li>Featured</li>
-          <li>Designers</li>
+          <li><Link to={'/viewdesigns'}>Designs</Link></li>
+          <li>Category</li>
+          <li><Link to={'/history'}>History</Link></li>
           <li>About Us</li>
           <li>Contact</li>
         </ul>
