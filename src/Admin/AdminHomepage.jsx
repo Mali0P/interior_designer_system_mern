@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import UserList from './ViewUsers/UserList';
 import { useNavigate } from 'react-router-dom';
+import CustomizationRequest from './CustomizationRequest/CustomizationRequest';
+import CustomizationHistory from './CustomizationRequest/CustomizationHistory';
 export default function AdminHomepage() {
   const [counts, setCounts] = useState({ users: 0, designers: 0, designs: 0 });
   const [categories, setCategories] = useState([]);
@@ -103,8 +105,8 @@ export default function AdminHomepage() {
           }
         })
         .catch((error) => {
-          console.error('Error logging out:', error);
-          alert('Error logging out');
+       
+          navigate('/admin/login'); 
         });
     };
   
@@ -136,6 +138,7 @@ export default function AdminHomepage() {
             <li><a href="#showCategories">Add Category</a></li>
             <li><a href="#designs">Designs</a></li>
             <li><a href="#users">Users/Designers</a></li>
+            <li><a href="#recent_customization">Recent Customization</a></li>
             <li onClick={logout} className='cursor-pointer'>Logout</li>
           </ul>
         </div>
@@ -243,6 +246,14 @@ export default function AdminHomepage() {
         <div id='users' className="designs bg-white mt-4 rounded p-4">
          
           <UserList/>
+        </div>
+        <div id='recent_customization' className="designs bg-white mt-4 rounded p-4">
+         
+         <CustomizationRequest/>
+        </div>
+        <div id='recent_customization' className="designs bg-white mt-4 rounded p-4">
+         
+         <CustomizationHistory/>
         </div>
       </div>
     </div>

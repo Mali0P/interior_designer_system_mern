@@ -73,37 +73,36 @@ const storedUser = JSON.parse(localStorage.getItem('user'));
 
       <div className="rightDashboard w-[78vw] h-[300%] bg-[#f2f2f2] relative px-[3vw] py-[2vw] flex ml-[22vw] flex-col">
     
-        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} className="myProfile w-[100%] h-[32%] relative bg-[white] pr-[4vw] px-[4vw] py-[1vw] rounded-[1vw] border flex justify-around">
+        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} className="myProfile w-[100%] h-[22%] relative bg-[white] pr-[4vw] px-[4vw] py-[1vw] rounded-[1vw] border flex justify-around">
           <div className="topContent w-[40%] h-[100%] relative">
             <h2 className='text-[3vw] font-[500]'>Hello, {storedUser.username}!</h2>
             <h2 className='text-[1vw] font-[400]'>Designer / Dashboard</h2>
             <img
               className="w-[60%] h-[50%] mt-[1vw] object-cover"
               style={{ objectPosition: 'center' }}
-              src="https://images.squarespace-cdn.com/content/v1/574512d92eeb81676262d877/23c81b18-6a05-4691-9c9c-884f3842bc9e/Lexie-2MB.jpg?format=1500w"
-              alt="Profile"
+              src="https://img.freepik.com/free-vector/flat-world-graphics-day-illustration_23-2148880103.jpg?t=st=1733252302~exp=1733255902~hmac=9fd07f8f17936c54016b31c0658e39a3cf711dcdcc3bea48c479985d7d09ac1e&w=740"
             />
           </div>
           <div className="topContent w-[50%] h-[100%] py-[2vw] relative">
-            <h2 className='text-[2vw] text-[rgb(0,0,0,0.9)] font-[600] mb-[2vw]'>IDS / My Profile</h2>
+            <h2 className='text-[1.5vw] text-[rgb(0,0,0,0.9)] font-[600] mb-[2vw]'>IDS / My Profile</h2>
          
-              <ul className='flex flex-col gap-[2vw]'>
+              <ul className='flex flex-col gap-[1vw]'>
                 <li>
                   <label className='font-[600]'>Name</label>
               
-                    <h2 className='font-[500] text-[2vw]'>{storedUser.username}</h2>
+                    <h2 className='font-[500] text-[1.4vw]'>{storedUser.username}</h2>
                 
                 </li>
                 <li>
                   <label className='font-[600]'>Email</label>
                 
-                    <h2 className='font-[500] text-[2vw]'>{storedUser.email}</h2>
+                    <h2 className='font-[500] text-[1.4vw]'>{storedUser.email}</h2>
                   
                 </li>
                 <li>
                   <label className='font-[600]'>Address</label>
                  
-                    <h2 className='font-[500] text-[2vw]' style={{textTransform:'capitalize'}}>{storedUser.address}</h2>
+                    <h2 className='font-[500] text-[1.4vw]' style={{textTransform:'capitalize'}}>{storedUser.address}</h2>
                {console.log(storedUser)}
                 </li>
                 <li>
@@ -146,8 +145,8 @@ const storedUser = JSON.parse(localStorage.getItem('user'));
   
         </div>
         <div id='mydesigns' style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px', minHeight:'40vw' }} className="addDesign w-[100%] bg-[white] mt-[2vw] rounded-[1vw] border px-[2vw] py-[3vw]" >
-            <h3 className='text-[1vw] font-[600] text-[rgb(0,0,0)] mb-[0.4vw] text-[black]'>My Designs</h3>
-            <h3 className='text-[1.2vw] text-[rgb(0,0,0,0.7)] mb-[1vw] text-[0.6vw]'>Interior Designer System / View Designs</h3>
+            <h3 className='text-[1vw] font-[600] text-[rgb(0,0,0)] mb-[0.4vw] text-[black]'>My Customization Request</h3>
+            <h3 className='text-[1.2vw] text-[rgb(0,0,0,0.7)] mb-[1vw] text-[0.6vw]'>Interior Designer System / View Requests</h3>
   
     <CustomizationRequest/>
    

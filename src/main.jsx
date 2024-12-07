@@ -13,6 +13,8 @@ import AdminHomepage from './Admin/AdminHomepage.jsx'
 import ShowData from './InteriorSystem/ShowDesigns/ShowData.jsx';
 import Customization from './InteriorSystem/Individualdesign/Customization.jsx';
 import ShowHistory from './InteriorSystem/ShowHistory/ShowHistory.jsx';
+import ShowResponse from './InteriorSystem/ShowHistory/ShowResponse.jsx';
+import Recommendation from './InteriorSystem/Recommendation/Recommendation.jsx';
 // Define your routes using createBrowserRouter
 let allRoutes = createBrowserRouter([
   {
@@ -66,6 +68,14 @@ let allRoutes = createBrowserRouter([
   {
     path:'history',
     element:<ShowHistory/>
+  },
+  {
+    path:'mydesigns',
+    element:<ShowResponse/>
+  },
+  {
+    path:'recommendation',
+    element:<Recommendation/>
   }
 ]);
 

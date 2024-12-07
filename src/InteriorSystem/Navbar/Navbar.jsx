@@ -28,11 +28,12 @@ export default function Navbar() {
           <Link to={'/'}>          IDS</Link>
 </h1>
         <ul className='flex gap-[1vw] text-[1vw] font-[500]'>
-          <li><Link to={'/viewdesigns'}>Designs</Link></li>
-          <li>Category</li>
-          <li><Link to={'/history'}>History</Link></li>
-          <li>About Us</li>
-          <li>Contact</li>
+          <li><Link to={'/mydesigns'}>Designs</Link></li>
+          <li><Link to={'/recommendation'}>Recommendation</Link></li>
+          <li><Link to={'/viewdesigns'}>Category</Link></li>  
+          <li><Link to={'/history'}>Requests</Link></li>
+          <li><Link to={'/'}>   About Us</Link></li>
+          <li><Link to={'/'}>   Contact</Link></li>
         </ul>
 
         {!isLoggedIn ? (
